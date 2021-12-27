@@ -1,4 +1,13 @@
+<?php
+$message = 0;
 
+//start session
+session_start();
+
+if (isset($_SESSION['AdminAuth'])) {
+    header('location:index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,13 +30,19 @@
                 </div>
 
                 <div class="sign_in" id="signInForm">
-                    <form class="sign_in_form" action="./post-and-get/admin-login.php" method="POST">
+                    <form class="sign_in_form" action="./helper/admin-login.php" method="POST">
                         <input id="sign_in_email" class="sign_in_up_input" type="email" placeholder="Email" name="email" required="" />
                         <input id="sign_in_password" class="sign_in_up_input" type="password" placeholder="Password" name="password" required="" />
 
                         <button class="btn_sign_in margin-30" type="submit" name="submit" >Sign In</button>
                         <a class="no-dec" href="#">Forgot password?</a>
-                  
+                        <?php
+                        if ($message == 1) {
+                            echo '<div style="color:red">Invalid Username or Password!<div>';
+                        } else {
+                            echo '';
+                        }
+                        ?>
                     </form>
                 </div>
             </div>
