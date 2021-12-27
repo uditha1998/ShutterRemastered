@@ -1,6 +1,9 @@
 
 <!DOCTYPE html>
-
+<?php
+include './class/Include.php';
+include './helper/auth.php';
+?>
 <html>
     <head>
         <title>Home</title>
@@ -21,7 +24,7 @@
 
         </div>     
 
-<?php include './side-nav.php'; ?>  
+        <?php include './side-nav.php'; ?>  
 
 
         <div class="main">
@@ -43,7 +46,7 @@
                     </div>
                     <div class="col-12">
                         <div class="row flex-wrap">
-                           
+
                         </div>
                     </div>
 
