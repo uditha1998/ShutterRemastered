@@ -1,0 +1,296 @@
+/*Common*/
+.flex{
+    display: flex;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+.center{
+    text-align: center;
+}
+.flex-wrap{
+    flex-wrap: wrap !important;
+}
+.full-width{
+    width:100%;
+}
+.padding-10{
+    padding: 10px;
+}
+.margin-t-30{
+    margin-top: 30px;
+}
+
+/*Nav Bar Css*/
+.admin-nav{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #1f1f2c;
+    width: 100%;
+    height: 70px;
+    -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 0 30px;
+}
+.admin-nav-titile{
+    color: white;
+    width: 100%;
+    padding: 22px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/*Sidde Nav Css*/
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1a1b2a;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top:90px;
+    float:left
+}
+.main{
+    float: right;
+    width: 80%;
+    position: relative;
+    margin-top: 60px;
+
+}
+
+.sidenav ul li{
+    list-style: none;
+    padding: 10px;
+}
+.sidenav ul{
+    padding-left: 0px
+}
+/*            .sidenav ul li a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 16px;
+                color: #fff;
+                display: block;
+                transition: 0.3s;
+                background-color: #800080;
+                margin: 15px;
+                border-radius: 10px;
+
+            }*/
+.link-list:hover {
+    background-color: #075877;
+}
+.sidenav center{
+    padding-bottom: 20px
+}
+.sidenav label{
+    color: white;
+    text-align:center;
+
+}
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* On mouse-over */
+
+.active {
+    background-color: #075877;
+    color: white;
+}
+
+
+/*Div Width Css*/
+.col-6{
+    width: 50%;
+}
+.col-12{
+    width:100%;
+}
+.col-3{
+    width: 25%;
+}
+
+.col-1{
+    width: 8.33333%;
+}
+.col-2{
+    width: 16.66666%;
+}
+.col-4{
+    width: 33.33333%;
+}
+.col-5{
+    width: 41.66666%;
+}
+.col-7{
+    width: 58.33333%;
+}
+.col-8{
+    width: 66.66666%;
+}
+.col-9{
+    width: 75%;
+}
+.col-10{
+    width: 83.333333%;
+}
+.col-11{
+    width: 91.666666%;
+}
+.row
+{
+    display: flex;
+}
+
+
+
+
+
+/*Inner Sections Css*/
+
+
+.padding-list{
+    padding: 20px;
+    background-color: azure;
+}
+.padding-list label{
+    font-size: 17px
+}
+
+.breadcumb{
+    display: none;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 70px;
+    right: -245px;
+    font-size: 36px;
+    margin-left: 50px;
+    display: none
+}
+.btn-change-pro{
+    height: 40px;
+    height: 40px;
+    width: 300px;
+    border: 3px solid black;
+    background-color: #9f0e9f80;
+    color: #f2f1ed;
+    max-width: 100%;
+}
+.profile-pic{
+    border: 2px solid #0c889c;
+    position: relative;
+    max-width: 100%;
+    height:auto;
+
+}
+.title-top{
+    font-weight: 600;
+    text-align: center;
+    border: 3px solid #0c889c;;
+    padding-left: 0px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.box {
+    clear: both;
+    margin: 20px;
+
+}
+/*Event*/
+.event-list{
+    margin:5px ;
+    border: 1px black solid;
+}
+.event-list label{
+    color: white
+}
+.event-list span{
+
+
+    color: black;
+    font-size: 18px;
+    background-color: white;
+    padding: 6px 6px 6px 6px;
+    border-radius: 7px;
+}
+/*Profile*/
+.profile-details{
+
+    padding: 10px 5px 10px 5px;
+    border-bottom:  1px grey solid;
+}
+.profile-details label{
+    display: inline-block;
+}
+.profile-details .single-row{
+    display: flex;
+}
+.pro-container{
+    margin: 10px;
+    border: 1px grey solid;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+@media screen and (max-width:769px){
+    .breadcumb{
+        display: block;
+    }
+    #mySidenav{
+        width: 0;
+    }
+    .main{
+        width: 100%
+    }
+    .sidenav .closebtn {
+        display: block
+    }
+
+}
+@media screen and (max-width:450px){
+    .mobile-res{
+        width: 100%
+    }
+    .mobile-off-flex{
+        display: block
+    }
+}
