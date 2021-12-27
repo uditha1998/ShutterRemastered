@@ -50,7 +50,7 @@
 
             <li class="link-list">  <a href="#">Manage Clients</a></li>
             <li class="link-list">  <a href="#">Order Summary</a></li>
-            <li class="link-list">  <a href="#">Log out </a></li>
+            <li class="link-list">  <a href="./helper/log-out.php">Log out </a></li>
 
 
 
