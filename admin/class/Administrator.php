@@ -13,6 +13,18 @@ class Admin extends DBconnection {
     public function __construct() {
         parent::__construct();
     }
+    public function create() {
+
+        $sql = "INSERT INTO admin (username, email, password,referral_id) VALUES ('$this->userName', '$this->email', '$this->password' ,'$this->referral_id');";
+
+        if (mysqli_query($this->connection, $sql)) {
+
+            echo '<script>alert("You have Succesfully Created a new Admin")</script>';
+            header('location:../manage-admin.php');
+        } else {
+            echo '<script>alert("Unable to create a new Admin")</script>';
+        }
+    }
     public function Login() {
 
         $sql = "SELECT id FROM admin WHERE email = '$this->email' AND password = '$this->password'";
