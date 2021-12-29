@@ -13,6 +13,7 @@ class Admin extends DBconnection {
     public function __construct() {
         parent::__construct();
     }
+
     public function create() {
 
         $sql = "INSERT INTO admin (username, email, password,referral_id) VALUES ('$this->userName', '$this->email', '$this->password' ,'$this->referral_id');";
@@ -25,6 +26,7 @@ class Admin extends DBconnection {
             echo '<script>alert("Unable to create a new Admin")</script>';
         }
     }
+
     public function Login() {
 
         $sql = "SELECT id FROM admin WHERE email = '$this->email' AND password = '$this->password'";
@@ -39,6 +41,54 @@ class Admin extends DBconnection {
         } else {
 
             header('location:../login.php?message=1');
+        }
+    }
+
+    public function getterAdmin() {
+        $sql = "select * from admin where id='$this->id'";
+        $result = mysqli_query($this->connection, $sql);
+        $array_res = array();
+        while ($row = $result->fetch_assoc()) {
+
+            array_push($array_res, $row);
+        }
+        return $array_res;
+    }
+
+    public function getterReferrelledAdmin() {
+        $sql = "select * from admin where  referral_id=' $this->id' ";
+        $result = mysqli_query($this->connection, $sql);
+        $array_res = array();
+        while ($row = $result->fetch_assoc()) {
+
+            array_push($array_res, $row);
+        }
+        return $array_res;
+    }
+
+    public function removeAdmin() {
+        $sql = "delete from admin where id='$this->id'";
+        $result = mysqli_query($this->connection, $sql);
+        if ($result) {
+            header("location:../../manage-admin.php");
+        } else {
+            header("location:./../manage-admin.php");
+        }
+    }
+
+    //Later Implementation for View Profile in Admin Panel
+    public function SetAllfromDb() {
+        $sql = "SELECT * FROM admin WHERE id = '$this->id';";
+
+        $result = mysqli_query($this->connection, $sql);
+        $row = $result->fetch_assoc();
+        if (mysqli_num_rows($result) > 0) {
+
+            $this->userName = $row['username'];
+            $this->email = $row['email'];
+            $this->referral_id = $row['referral_id'];
+        } else {
+            return FALSE;
         }
     }
 
