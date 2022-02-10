@@ -5,8 +5,8 @@
 }
 
 body{
-    /* background-color: #111; */
-    background-color: black;
+    background-color: #111; 
+    
     display: flex;
     flex-direction: column;
     position: relative;
