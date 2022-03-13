@@ -7,8 +7,15 @@
             <img style="border-radius:50%" class="res-profile" src="./image/administrator.jpg" width="75px"></img>
         </div>
         <div style="width:100%;text-align: center;margin-top:10px">
-      
-            <label  style="" >Rudy</label>
+            <?php
+            $ADMIN = new Admin();
+            $ADMIN->setId($admin_id);
+            $admin_name;
+            foreach ($ADMIN->getterAdmin() as $admin_name) {
+                $admin_name = $admin_name['username'];
+            }
+            ?>
+            <label  style="" ><?= $admin_name ?></label>
         </div>
     </div>
     <div>
@@ -20,8 +27,8 @@
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-container">
-                    <a href="#">Create</a>
-                    <a href="#">Manage</a>
+                    <a href="create-events.php">Create</a>
+                    <a href="manage-events.php">Manage</a>
 
                 </div>
             </li>
@@ -31,8 +38,8 @@
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-container">
-                    <a href="#">Create</a>
-                    <a href="#">Manage</a>
+                    <a href="create-admin.php">Create</a>
+                    <a href="manage-admin.php">Manage</a>
 
                 </div>
             </li>
@@ -42,15 +49,15 @@
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-container">
-                    <a href="#">Pending Photographers</a>
-                    <a href="#">Manage Photographers</a>
+                    <a href="manage-pending-photographers.php">Pending Photographers</a>
+                    <a href="manage-photographers.php">Manage Photographers</a>
 
                 </div>
             </li>
 
-            <li class="link-list">  <a href="#">Manage Clients</a></li>
+            <li class="link-list">  <a href="./manage-clients.php">Manage Clients</a></li>
             <li class="link-list">  <a href="#">Order Summary</a></li>
-            <li class="link-list">  <a href="./helper/log-out.php">Log out </a></li>
+            <li class="link-list">  <a href="./post-and-get/log-out.php">Log out </a></li>
 
 
 

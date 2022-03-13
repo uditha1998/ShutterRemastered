@@ -1,16 +1,15 @@
-<?php
-
+=
+<?php 
 include './class/Include.php';
 include './post-and-get/auth.php';
 
-$ADMIN= new Admin();
-$ADMIN->setId($admin_id);
+$EVENT = new Event();
 ?>
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>Manage Adninistrators</title>
+        <title>Manage Events</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
@@ -46,19 +45,19 @@ $ADMIN->setId($admin_id);
                 <div class="row box bg-shadow">
 
                     <div class="col-12 form-title">
-                        <h5>Manage Administrators</h5>
+                        <h5>Manage Events</h5>
                     </div>
                     <div class="col-12">
                         <div class="row flex-wrap">
-                            <?php foreach ($ADMIN->getterReferrelledAdmin() as $admin) { ?>
+                            <?php foreach ($EVENT->RetriveAll() as $events) { ?>
                                 <div class="col-4">
                                     <div class="event-list">
-                                        <img src="../admin/image/administrator.jpg" height="300PX" width="100%">
+                                        <img src="./../image/events/<?= $events['image'] ?>" height="300PX" width="100%">
                                         <div style="background-color: #075877cc;Padding: 20px;">
                                             <div class="row">
-                                                <label class="col-7"><?=$admin['username']?></label>
+                                                <label class="col-7"><?=$events['name']?></label>
                                                 <div  class="col-5"style="text-align: right">
-                                                    <a href="./post-and-get/delete/delete-admin.php?id=<?=$admin['id']?>" onclick="return removeEvent();"><span> <i class="fa fa-trash"></i></span></a>
+                                                    <a href="./post-and-get/delete/delete-event.php?id=<?=$events['id']?>" onclick="return removeEvent();"><span> <i class="fa fa-trash"></i></span></a>
                                                     <span> <i class="fa fa-pencil"></i></span>
 
                                                 </div>
