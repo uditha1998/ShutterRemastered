@@ -1,9 +1,10 @@
-
-<!DOCTYPE html>
+=
 <?php
 include './class/Include.php';
-include './helper/auth.php';
+include './post-and-get/auth.php';
 ?>
+<!DOCTYPE html>
+
 <html>
     <head>
         <title>Home</title>
@@ -24,7 +25,7 @@ include './helper/auth.php';
 
         </div>     
 
-        <?php include './side-nav.php'; ?>  
+<?php include './side-nav.php'; ?>  
 
 
         <div class="main">
@@ -42,11 +43,11 @@ include './helper/auth.php';
                 <div class="row box bg-shadow">
 
                     <div class="col-12 form-title">
-                        <h5>Welcome Rudy to the Shutter Control Panel !</h5>
+                        <h5>Welcome <?=$admin_name?> to the Shutter Control Panel !</h5>
                     </div>
                     <div class="col-12">
                         <div class="row flex-wrap">
-
+                           
                         </div>
                     </div>
 
@@ -59,6 +60,19 @@ include './helper/auth.php';
 
 
 
+        <script src="js/script.js" type="text/javascript"></script>
+        <script>
+                    function removeEvent() {
+                        var result = confirm("Are You Really Want to Delete?");
+
+                        if (result === true) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+
+                    }
+        </script>
 
     </body>
 </html> 
